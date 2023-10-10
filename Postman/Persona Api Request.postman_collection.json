@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "41645466-12c9-44f3-9c40-a9a612746c8d",
+		"name": "Persona Api Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30238234"
+	},
+	"item": [
+		{
+			"name": "Get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas/2",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"nombre\": \"Pablo\",\r\n        \"apellido\": \"Olland\",\r\n        \"dni\": 42999001,\r\n        \"domicilio\": {\r\n            \"calle\": \"San Martin\",\r\n            \"numero\": 109,\r\n            \"localidad\": {\r\n                \"denominacion\": \"Maipu\"\r\n            }\r\n        },\r\n        \"libros\": [\r\n            {\r\n                \"titulo\": \"El Desconocido\",\r\n                \"genero\": \"Suspenso\",\r\n                \"paginas\": 350,\r\n                \"fecha\": 2001,\r\n                \"autores\": [\r\n                    {\r\n                        \"nombre\": \"Franco\",\r\n                        \"apellido\": \"Buffarini\",\r\n                        \"biografia\": \"7 premios al mejor escritor\"\r\n                    },\r\n                    {\r\n                        \"nombre\": \"Fabrizio\",\r\n                        \"apellido\": \"Alone\",\r\n                        \"biografia\": \"Principiante\"\r\n                    },\r\n                    {\r\n                        \"nombre\": \"Pablo\",\r\n                        \"apellido\": \"Rineman\",\r\n                        \"biografia\": \"Prodigio\"\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"titulo\": \"Mil lunas\",\r\n                \"genero\": \"Terror\",\r\n                \"paginas\": 200,\r\n                \"fecha\": 2005,\r\n                \"autores\": [\r\n                    {\r\n                        \"nombre\": \"Lautaro\",\r\n                        \"apellido\": \"Bife\",\r\n                        \"biografia\": \"Doctorado en literatura\"\r\n                    },\r\n                    {\r\n                        \"nombre\": \"Facundo\",\r\n                        \"apellido\": \"Olea\",\r\n                        \"biografia\": \"El mejor cumpa\"\r\n                    }\r\n                ]\r\n            }\r\n                ]\r\n }\r\n    \r\n    "
+				},
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Fabrizio\",\r\n    \"apellido\": \"Lland\",\r\n    \"dni\": 42999001,\r\n    \"domicilio\": {\r\n        \"id\": 1,\r\n        \"calle\": \"San Martin\",\r\n        \"numero\": 109,\r\n        \"localidad\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Maipu\"\r\n        }\r\n    },\r\n    \"libros\": [\r\n        {\r\n            \"id\": 1,\r\n            \"titulo\": \"El Desconocido\",\r\n            \"genero\": \"Suspenso\",\r\n            \"paginas\": 350,\r\n            \"fecha\": 2001,\r\n            \"autores\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"nombre\": \"Franco\",\r\n                    \"apellido\": \"Buffarini\",\r\n                    \"biografia\": \"7 premios al mejor escritor\"\r\n                },\r\n                {\r\n                    \"id\": 2,\r\n                    \"nombre\": \"Fabrizio\",\r\n                    \"apellido\": \"Alone\",\r\n                    \"biografia\": \"Principiante\"\r\n                },\r\n                {\r\n                    \"id\": 3,\r\n                    \"nombre\": \"Pablo\",\r\n                    \"apellido\": \"Rineman\",\r\n                    \"biografia\": \"Prodigio\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"titulo\": \"Mil lunas\",\r\n            \"genero\": \"Terror\",\r\n            \"paginas\": 200,\r\n            \"fecha\": 2005,\r\n            \"autores\": [\r\n                {\r\n                    \"id\": 4,\r\n                    \"nombre\": \"Lautaro\",\r\n                    \"apellido\": \"Bife\",\r\n                    \"biografia\": \"Doctorado en literatura\"\r\n                },\r\n                {\r\n                    \"id\": 5,\r\n                    \"nombre\": \"Facundo\",\r\n                    \"apellido\": \"Olea\",\r\n                    \"biografia\": \"El mejor cumpa\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas/1",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas/1",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEARCH",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas/search?filtro=l",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas",
+						"search"
+					],
+					"query": [
+						{
+							"key": "filtro",
+							"value": "l"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL PAGED",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas/paged?page=0&size=5&sort=id,asc",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas",
+						"paged"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "id,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SEARCH PAGED",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tp-api-conpaginacion-fabrizio.onrender.com/api/v1/personas/searchPaged?filtro=Pablo&page=0&size=5&sort=id,desc",
+					"protocol": "https",
+					"host": [
+						"tp-api-conpaginacion-fabrizio",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"personas",
+						"searchPaged"
+					],
+					"query": [
+						{
+							"key": "filtro",
+							"value": "Pablo"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "id,desc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
